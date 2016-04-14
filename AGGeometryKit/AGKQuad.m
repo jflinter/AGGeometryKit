@@ -159,20 +159,21 @@ AGKQuad AGKQuadInsetBottom(AGKQuad q, CGFloat inset)
 
 AGKQuad AGKQuadMirror(AGKQuad q, BOOL x, BOOL y)
 {
-    AGKQuad mirroredQ;
+    AGKQuad mirroredQ = q;
+    CGPoint center = AGKQuadGetCenter(q);
     if(x)
     {
-        mirroredQ.tl.x = q.tr.x;
-        mirroredQ.tr.x = q.tl.x;
-        mirroredQ.bl.x = q.br.x;
-        mirroredQ.br.x = q.bl.x;
+        mirroredQ.tl.x = (2 * center.x) - q.tr.x;
+        mirroredQ.tr.x = (2 * center.x) - q.tl.x;
+        mirroredQ.bl.x = (2 * center.x) - q.br.x;
+        mirroredQ.br.x = (2 * center.x) - q.bl.x;
     }
     if(y)
     {
-        mirroredQ.tl.y = q.tr.y;
-        mirroredQ.tr.y = q.tl.y;
-        mirroredQ.bl.y = q.br.y;
-        mirroredQ.br.y = q.bl.y;
+        mirroredQ.tl.y = (2 * center.y) - q.tr.y;
+        mirroredQ.tr.y = (2 * center.y) - q.tl.y;
+        mirroredQ.bl.y = (2 * center.y) - q.br.y;
+        mirroredQ.br.y = (2 * center.y) - q.bl.y;
     }
     return mirroredQ;
 }
