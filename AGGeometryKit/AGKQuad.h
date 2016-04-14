@@ -56,8 +56,8 @@ AGKQuad AGKQuadInsetRight(AGKQuad q, CGFloat inset);
 AGKQuad AGKQuadInsetTop(AGKQuad q, CGFloat inset);
 AGKQuad AGKQuadInsetBottom(AGKQuad q, CGFloat inset);
 AGKQuad AGKQuadMirror(AGKQuad q, BOOL x, BOOL y);
-AGKQuad AGKQuadMirrorHorizontal(AGKQuad q);
-AGKQuad AGKQuadMirrorVertical(AGKQuad q)
+AGKQuad AGKQuadMirrorHorizontalAroundX(AGKQuad q, CGFloat x);
+AGKQuad AGKQuadMirrorVerticalAroundY(AGKQuad q, CGFloat y);
 AGKQuad AGKQuadMake(CGPoint tl, CGPoint tr, CGPoint br, CGPoint bl);
 AGKQuad AGKQuadMakeWithCGRect(CGRect rect);
 AGKQuad AGKQuadMakeWithCGSize(CGSize size);
