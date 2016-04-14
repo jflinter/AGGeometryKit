@@ -164,16 +164,26 @@ AGKQuad AGKQuadMirror(AGKQuad q, BOOL x, BOOL y)
     if(x)
     {
         mirroredQ.tl.x = (2 * center.x) - q.tr.x;
+        mirroredQ.tl.y = q.tr.y;
         mirroredQ.tr.x = (2 * center.x) - q.tl.x;
+        mirroredQ.tr.y = q.tl.y;
         mirroredQ.bl.x = (2 * center.x) - q.br.x;
+        mirroredQ.bl.y = q.br.y;
         mirroredQ.br.x = (2 * center.x) - q.bl.x;
+        mirroredQ.br.y = q.bl.y;
+        q = mirroredQ;
     }
     if(y)
     {
         mirroredQ.tl.y = (2 * center.y) - q.tr.y;
+        mirroredQ.tl.x = q.tr.x;
         mirroredQ.tr.y = (2 * center.y) - q.tl.y;
+        mirroredQ.tr.x = q.tl.x;
         mirroredQ.bl.y = (2 * center.y) - q.br.y;
+        mirroredQ.bl.x = q.br.x;
         mirroredQ.br.y = (2 * center.y) - q.bl.y;
+        mirroredQ.br.x = q.bl.x;
+        q = mirroredQ;
     }
     return mirroredQ;
 }
